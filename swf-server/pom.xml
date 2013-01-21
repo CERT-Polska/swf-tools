@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>swf</artifactId>
+		<groupId>pl.nask.hsn2</groupId>
+		<version>2.0.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+  <groupId>pl.nask.hsn2</groupId>
+  <artifactId>swf-server</artifactId>
+  <version>2.0.0-SNAPSHOT</version>
+  <name>SWF server</name>
+
+	<dependencies>
+		<dependency>
+		    <groupId>pl.nask.hsn2</groupId>
+		    <artifactId>swf-tool</artifactId>
+		    <version>2.0.0-SNAPSHOT</version>
+		</dependency>							
+	</dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+  </build>
+  	<profiles>
+		<profile>
+			<id>bundle</id>
+			<!--<properties> <maven.test.skip>true</maven.test.skip> </properties> -->
+			<build>
+				<plugins>
+					<plugin>
+						<!--<groupId>org.apache.maven.plugins</groupId> -->
+						<artifactId>maven-jar-plugin</artifactId>
+						<configuration>
+							<archive>
+								<manifest>
+									<addClasspath>true</addClasspath>
+									<mainClass>pl.nask.swftool.cvetool.Main</mainClass>
+									<classpathPrefix>lib/</classpathPrefix>
+								</manifest>
+							</archive>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

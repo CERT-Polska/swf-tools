@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+
+    <id>hsn2</id>
+    <formats>
+      <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    
+    <!--<files>
+    	<file>    	
+    		<destName>hsn2-swf-service.jar</destName>
+    		<source>${project.build.directory}/hsn2-swf-service-${version}.jar</source>
+    		<fileMode>0644</fileMode>
+    	</file>
+    </files>
+        
+    -->
+    <dependencySets>
+      <dependencySet>        
+        <outputDirectory>/lib</outputDirectory>
+        <useProjectArtifact>false</useProjectArtifact>
+        <fileMode>0644</fileMode>
+        <!-- don't include svc plugins in the lib directory -->
+        <excludes>
+        	<exclude>cve_2007_0071-plugin*</exclude>
+        	<exclude>cve_2009_1869-plugin*</exclude>
+			<exclude>swf-server*</exclude>
+        </excludes>
+        <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+      </dependencySet>
+      
+      <dependencySet>        
+        <outputDirectory>/plugins</outputDirectory>
+        <useProjectArtifact>false</useProjectArtifact>
+        <fileMode>0644</fileMode>
+		<includes>
+			<include>cve_2007_0071-plugin*</include>	
+			<include>cve_2009_1869-plugin*</include>
+		</includes>
+      </dependencySet>
+      
+      <dependencySet>        
+        <outputDirectory>/</outputDirectory>
+        <useProjectArtifact>false</useProjectArtifact>
+        <fileMode>0644</fileMode>
+		<includes>
+			<include>swf-tool*</include>	
+			<include>swf-server*</include>
+		</includes>
+      </dependencySet>
+    </dependencySets>
+    
+    
+</assembly>
