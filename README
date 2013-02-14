@@ -1,10 +1,9 @@
-HSN2 SWF (hsn2-swf)
+SWF Tool (swf-tools)
 
 
-The HSN2 SWF service is a .swf flash files shellcode scanner set of modules,
-that analyze extracted fragments that may contain shellcode.
-
-
+SWF-TOOL is tool which is used to analyze swf files (searching for known
+vulnerability). Its main purpose to support Flash CVE Analyzer service,
+but can be used also as stand-alone tool.
 
 This repository is a part of bigger project: Honeyspider Network 2.0.
 Project bundle is located at: https://github.com/CERT-Polska/hsn2-bundle.
