@@ -80,7 +80,6 @@
 											<mainClass>pl.nask.swftool.SwfTool</mainClass>
 										</manifest>
 									</archive>
-									<appendAssemblyId>false</appendAssemblyId>
 									<descriptors>
 										<descriptor>src/main/assembly/swf-onejar.xml</descriptor>
 									</descriptors>
