@@ -57,18 +57,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>drorepo</id>
-			<name>DRO Repository</name>
-			<url>http://drotest3.nask.net.pl:8080/nexus/content/repositories/drorepo/</url>
-		</repository>
-		<snapshotRepository>
-			<id>droreposnap</id>
-			<name>DRO Snapshot Repository</name>
-			<url>http://drotest3.nask.net.pl:8080/nexus/content/repositories/droreposnap/</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
 </project>
