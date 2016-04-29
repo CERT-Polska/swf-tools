@@ -5,7 +5,7 @@ SWF-TOOL is tool which is used to analyze swf files (searching for known
 vulnerability). Its main purpose to support Flash CVE Analyzer service,
 but can be used also as stand-alone tool.
 
-This repository is a part of bigger project: Honeyspider Network 2.0.
+This repository is a part of bigger project: Honeyspider Network 2.1.
 Project bundle is located at: https://github.com/CERT-Polska/hsn2-bundle.
 More information is available on the project's website:
 http://www.honeyspider.net
