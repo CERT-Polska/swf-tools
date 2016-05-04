@@ -1,52 +1,60 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>pl.nask.hsn2</groupId>
-  <artifactId>swf</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>SWF </name>
-  
-  <dependencies>
-	<dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>1.6.1</version>
-      </dependency>
-	<dependency>
-		<groupId>org.testng</groupId>
-		<artifactId>testng</artifactId>
-		<version>6.2</version>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>com.googlecode.jmockit</groupId>
-		<artifactId>jmockit</artifactId>
-		<version>0.999.15</version>
-		<scope>test</scope>
-	</dependency>
-  </dependencies>
-  
-  <modules>
-  	<module>swf-cve-plugin</module>
-  	<module>swf-tool</module>
-  	<module>swf-server</module>
-  	<module>cve_2007_0071-plugin</module>
-  	<module>cve_2009_1869-plugin</module>
-  	<module>swf-bundle</module>
-  </modules>
-  
-  
-	<distributionManagement>
-		<repository>
-			<id>drorepo</id>
-			<name>DRO Repository</name>
-			<url>http://drotest3.nask.net.pl:8080/nexus/content/repositories/drorepo/</url>
-		</repository>
-		<snapshotRepository>
-			<id>droreposnap</id>
-			<name>DRO Snapshot Repository</name>
-			<url>http://drotest3.nask.net.pl:8080/nexus/content/repositories/droreposnap/</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>pl.nask.hsn2</groupId>
+	<artifactId>swf</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>SWF </name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler.plugin.version>3.0</compiler.plugin.version>
+		<jar.plugin.version>2.4</jar.plugin.version>
+		<assembly.plugin.version>2.4</assembly.plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>1.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<modules>
+		<module>swf-cve-plugin</module>
+		<module>swf-tool</module>
+		<module>swf-server</module>
+		<module>cve_2007_0071-plugin</module>
+		<module>cve_2009_1869-plugin</module>
+		<module>swf-bundle</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler.plugin.version}</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
